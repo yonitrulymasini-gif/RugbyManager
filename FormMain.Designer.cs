@@ -73,6 +73,7 @@
             btnModifierJoueur.TabIndex = 2;
             btnModifierJoueur.Text = "Modifier un joueur";
             btnModifierJoueur.UseVisualStyleBackColor = true;
+            btnModifierJoueur.Click += btnModifierJoueur_Click;
             // 
             // btnSupprimerJoueur
             // 

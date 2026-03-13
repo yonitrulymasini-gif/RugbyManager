@@ -48,3 +48,5 @@ C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.
 C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.genruntimeconfig.cache
 C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\ref\RugbyManager.dll
 C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.FormAjouterJoueur.resources
+C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.Form1.resources
+C:\Users\hendr\source\repos\RugbyManager\obj\Debug\net10.0-windows\RugbyManager.FormModifierJoueur.resources

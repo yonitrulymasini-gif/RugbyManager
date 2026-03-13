@@ -33,5 +33,11 @@ namespace RugbyManager
         {
 
         }
+        private void btnModifierJoueur_Click(object sender, EventArgs e)
+        {
+            FormModifierJoueur formModifier = new FormModifierJoueur();
+            formModifier.Show();
+            this.Hide();
+        }
     }
 }
