@@ -35,7 +35,7 @@
             btnGererEquipes = new Button();
             lblTitre = new Label();
             btnMiseAJourBlessures = new Button();
-            btnSmulerMatch = new Button();
+            btnSimulerMatch = new Button();
             btnQuitter = new Button();
             SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             btnSupprimerJoueur.TabIndex = 3;
             btnSupprimerJoueur.Text = "Supprimer un joueur";
             btnSupprimerJoueur.UseVisualStyleBackColor = true;
+            btnSupprimerJoueur.Click += btnSupprimerJoueur_Click;
             // 
             // btnGererEquipes
             // 
@@ -96,6 +97,7 @@
             btnGererEquipes.TabIndex = 4;
             btnGererEquipes.Text = "Gérer équipes";
             btnGererEquipes.UseVisualStyleBackColor = true;
+            btnGererEquipes.Click += btnGererEquipes_Click;
             // 
             // lblTitre
             // 
@@ -119,16 +121,17 @@
             btnMiseAJourBlessures.UseVisualStyleBackColor = true;
             btnMiseAJourBlessures.Click += btnMiseAJourBlessures_Click;
             // 
-            // btnSmulerMatch
+            // btnSimulerMatch
             // 
-            btnSmulerMatch.FlatStyle = FlatStyle.Flat;
-            btnSmulerMatch.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSmulerMatch.Location = new Point(848, 441);
-            btnSmulerMatch.Name = "btnSmulerMatch";
-            btnSmulerMatch.Size = new Size(194, 68);
-            btnSmulerMatch.TabIndex = 7;
-            btnSmulerMatch.Text = "Simuler match COMPLET";
-            btnSmulerMatch.UseVisualStyleBackColor = true;
+            btnSimulerMatch.FlatStyle = FlatStyle.Flat;
+            btnSimulerMatch.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSimulerMatch.Location = new Point(848, 441);
+            btnSimulerMatch.Name = "btnSimulerMatch";
+            btnSimulerMatch.Size = new Size(194, 68);
+            btnSimulerMatch.TabIndex = 7;
+            btnSimulerMatch.Text = "Simuler match COMPLET";
+            btnSimulerMatch.UseVisualStyleBackColor = true;
+            btnSimulerMatch.Click += btnSimulerMatch_Click;
             // 
             // btnQuitter
             // 
@@ -141,6 +144,7 @@
             btnQuitter.TabIndex = 8;
             btnQuitter.Text = "Quitter";
             btnQuitter.UseVisualStyleBackColor = false;
+            btnQuitter.Click += btnQuitter_Click;
             // 
             // FormMain
             // 
@@ -148,7 +152,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1156, 854);
             Controls.Add(btnQuitter);
-            Controls.Add(btnSmulerMatch);
+            Controls.Add(btnSimulerMatch);
             Controls.Add(btnMiseAJourBlessures);
             Controls.Add(lblTitre);
             Controls.Add(btnGererEquipes);
@@ -172,7 +176,7 @@
         private Button btnGererEquipes;
         private Label lblTitre;
         private Button btnMiseAJourBlessures;
-        private Button btnSmulerMatch;
+        private Button btnSimulerMatch;
         private Button btnQuitter;
     }
 }

@@ -9,17 +9,13 @@ namespace RugbyManager
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label1_Click(object sender, EventArgs e) { }
 
         private void btnAfficherJoueurs_Click(object sender, EventArgs e)
         {
             FormJoueurs formJoueurs = new FormJoueurs();
             formJoueurs.Show();
             this.Hide();
-
         }
 
         private void btnAjouterJoueur_Click(object sender, EventArgs e)
@@ -29,15 +25,44 @@ namespace RugbyManager
             this.Hide();
         }
 
-        private void btnMiseAJourBlessures_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnModifierJoueur_Click(object sender, EventArgs e)
         {
             FormModifierJoueur formModifier = new FormModifierJoueur();
             formModifier.Show();
             this.Hide();
+        }
+
+        private void btnSupprimerJoueur_Click(object sender, EventArgs e)
+        {
+            FormSupprimerJoueur formSupprimer = new FormSupprimerJoueur();
+            formSupprimer.Show();
+            this.Hide();
+        }
+
+        private void btnGererEquipes_Click(object sender, EventArgs e)
+        {
+            FormGererEquipes formEquipes = new FormGererEquipes();
+            formEquipes.Show();
+            this.Hide();
+        }
+
+        private void btnSimulerMatch_Click(object sender, EventArgs e)
+        {
+            SimulerMatch simulerMatch = new SimulerMatch();
+            simulerMatch.Show();
+            this.Hide();
+        }
+
+        private void btnMiseAJourBlessures_Click(object sender, EventArgs e)
+        {
+            FormMiseAJourBlessures formBlessures = new FormMiseAJourBlessures();
+            formBlessures.Show();
+            this.Hide();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
