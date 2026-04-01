@@ -11,7 +11,7 @@ namespace RugbyManager
 {
     public partial class FormJoueurs : Form
     {
-        string connectionString = "Server=127.0.0.1;Port=3306;Database=db_schema;Uid=root;Pwd=cesi;";
+        string connectionString = "Server=127.0.0.1;Port=3306;Database=valorant_manager;Uid=root;Pwd=root;";
 
         public FormJoueurs()
         {

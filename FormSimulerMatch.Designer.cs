@@ -1,6 +1,6 @@
 ﻿namespace RugbyManager
 {
-    partial class SimulerMatch
+    partial class FormSimulerMatch
     {
         /// <summary>
         /// Required designer variable.

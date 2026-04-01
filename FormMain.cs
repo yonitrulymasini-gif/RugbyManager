@@ -8,16 +8,6 @@ namespace RugbyManager
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e) { }
-
-        private void btnAfficherJoueurs_Click(object sender, EventArgs e)
-        {
-            FormJoueurs formJoueurs = new FormJoueurs();
-            formJoueurs.Show();
-            this.Hide();
-        }
-
         private void btnAjouterJoueur_Click(object sender, EventArgs e)
         {
             FormAjouterJoueur formAjouter = new FormAjouterJoueur();
@@ -48,7 +38,7 @@ namespace RugbyManager
 
         private void btnSimulerMatch_Click(object sender, EventArgs e)
         {
-            SimulerMatch simulerMatch = new SimulerMatch();
+            FormSimulerMatch simulerMatch = new FormSimulerMatch();
             simulerMatch.Show();
             this.Hide();
         }
@@ -63,6 +53,13 @@ namespace RugbyManager
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void siticoneButton1_Click(object sender, EventArgs e)
+        {
+            FormJoueurs formJoueurs = new FormJoueurs();
+            formJoueurs.Show();
+            this.Hide();
         }
     }
 }

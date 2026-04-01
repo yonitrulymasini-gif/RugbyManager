@@ -9,11 +9,11 @@ using MySql.Data.MySqlClient;
 
 namespace RugbyManager
 {
-    public partial class SimulerMatch : Form
+    public partial class FormSimulerMatch : Form
     {
-        string connectionString = "Server=127.0.0.1;Port=3306;Database=db_schema;Uid=root;Pwd=cesi;";
+        string connectionString = "Server=127.0.0.1;Port=3306;Database=valorant_manager;Uid=root;Pwd=root;";
 
-        public SimulerMatch()
+        public FormSimulerMatch()
         {
             InitializeComponent();
         }

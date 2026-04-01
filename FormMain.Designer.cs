@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAfficherJoueurs = new Button();
             btnAjouterJoueur = new Button();
             btnModifierJoueur = new Button();
             btnSupprimerJoueur = new Button();
@@ -37,27 +36,18 @@
             btnMiseAJourBlessures = new Button();
             btnSimulerMatch = new Button();
             btnQuitter = new Button();
+            uiAvatar1 = new Sunny.UI.UIAvatar();
+            uiButton1 = new Sunny.UI.UIButton();
             SuspendLayout();
-            // 
-            // btnAfficherJoueurs
-            // 
-            btnAfficherJoueurs.FlatStyle = FlatStyle.Flat;
-            btnAfficherJoueurs.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAfficherJoueurs.Location = new Point(105, 179);
-            btnAfficherJoueurs.Name = "btnAfficherJoueurs";
-            btnAfficherJoueurs.Size = new Size(207, 66);
-            btnAfficherJoueurs.TabIndex = 0;
-            btnAfficherJoueurs.Text = "Afficher tous les joueurs";
-            btnAfficherJoueurs.UseVisualStyleBackColor = true;
-            btnAfficherJoueurs.Click += btnAfficherJoueurs_Click;
             // 
             // btnAjouterJoueur
             // 
             btnAjouterJoueur.FlatStyle = FlatStyle.Flat;
             btnAjouterJoueur.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjouterJoueur.Location = new Point(467, 179);
+            btnAjouterJoueur.Location = new Point(737, 364);
+            btnAjouterJoueur.Margin = new Padding(3, 4, 3, 4);
             btnAjouterJoueur.Name = "btnAjouterJoueur";
-            btnAjouterJoueur.Size = new Size(196, 66);
+            btnAjouterJoueur.Size = new Size(224, 88);
             btnAjouterJoueur.TabIndex = 1;
             btnAjouterJoueur.Text = "Ajouter un joueur";
             btnAjouterJoueur.UseVisualStyleBackColor = true;
@@ -67,9 +57,10 @@
             // 
             btnModifierJoueur.FlatStyle = FlatStyle.Flat;
             btnModifierJoueur.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnModifierJoueur.Location = new Point(848, 179);
+            btnModifierJoueur.Location = new Point(482, 585);
+            btnModifierJoueur.Margin = new Padding(3, 4, 3, 4);
             btnModifierJoueur.Name = "btnModifierJoueur";
-            btnModifierJoueur.Size = new Size(194, 66);
+            btnModifierJoueur.Size = new Size(222, 88);
             btnModifierJoueur.TabIndex = 2;
             btnModifierJoueur.Text = "Modifier un joueur";
             btnModifierJoueur.UseVisualStyleBackColor = true;
@@ -79,9 +70,10 @@
             // 
             btnSupprimerJoueur.FlatStyle = FlatStyle.Flat;
             btnSupprimerJoueur.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSupprimerJoueur.Location = new Point(105, 441);
+            btnSupprimerJoueur.Location = new Point(492, 478);
+            btnSupprimerJoueur.Margin = new Padding(3, 4, 3, 4);
             btnSupprimerJoueur.Name = "btnSupprimerJoueur";
-            btnSupprimerJoueur.Size = new Size(207, 68);
+            btnSupprimerJoueur.Size = new Size(237, 91);
             btnSupprimerJoueur.TabIndex = 3;
             btnSupprimerJoueur.Text = "Supprimer un joueur";
             btnSupprimerJoueur.UseVisualStyleBackColor = true;
@@ -91,9 +83,10 @@
             // 
             btnGererEquipes.FlatStyle = FlatStyle.Flat;
             btnGererEquipes.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGererEquipes.Location = new Point(467, 361);
+            btnGererEquipes.Location = new Point(759, 490);
+            btnGererEquipes.Margin = new Padding(3, 4, 3, 4);
             btnGererEquipes.Name = "btnGererEquipes";
-            btnGererEquipes.Size = new Size(196, 59);
+            btnGererEquipes.Size = new Size(224, 79);
             btnGererEquipes.TabIndex = 4;
             btnGererEquipes.Text = "Gérer équipes";
             btnGererEquipes.UseVisualStyleBackColor = true;
@@ -102,20 +95,20 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitre.Location = new Point(349, 26);
+            lblTitre.Location = new Point(652, 9);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(495, 80);
+            lblTitre.Size = new Size(675, 107);
             lblTitre.TabIndex = 5;
-            lblTitre.Text = "RUGBY MANAGER";
-            lblTitre.Click += label1_Click;
+            lblTitre.Text = "VALORANT MANAGER";
             // 
             // btnMiseAJourBlessures
             // 
             btnMiseAJourBlessures.FlatStyle = FlatStyle.Flat;
             btnMiseAJourBlessures.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMiseAJourBlessures.Location = new Point(467, 526);
+            btnMiseAJourBlessures.Location = new Point(759, 591);
+            btnMiseAJourBlessures.Margin = new Padding(3, 4, 3, 4);
             btnMiseAJourBlessures.Name = "btnMiseAJourBlessures";
-            btnMiseAJourBlessures.Size = new Size(196, 58);
+            btnMiseAJourBlessures.Size = new Size(224, 77);
             btnMiseAJourBlessures.TabIndex = 6;
             btnMiseAJourBlessures.Text = "Mise à jour blessures";
             btnMiseAJourBlessures.UseVisualStyleBackColor = true;
@@ -125,9 +118,10 @@
             // 
             btnSimulerMatch.FlatStyle = FlatStyle.Flat;
             btnSimulerMatch.Font = new Font("Lucida Bright", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSimulerMatch.Location = new Point(856, 441);
+            btnSimulerMatch.Location = new Point(1026, 478);
+            btnSimulerMatch.Margin = new Padding(3, 4, 3, 4);
             btnSimulerMatch.Name = "btnSimulerMatch";
-            btnSimulerMatch.Size = new Size(194, 68);
+            btnSimulerMatch.Size = new Size(222, 91);
             btnSimulerMatch.TabIndex = 7;
             btnSimulerMatch.Text = "Simuler match COMPLET";
             btnSimulerMatch.UseVisualStyleBackColor = true;
@@ -138,19 +132,48 @@
             btnQuitter.FlatStyle = FlatStyle.Flat;
             btnQuitter.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnQuitter.ForeColor = SystemColors.ControlText;
-            btnQuitter.Location = new Point(467, 682);
+            btnQuitter.Location = new Point(1024, 589);
+            btnQuitter.Margin = new Padding(3, 4, 3, 4);
             btnQuitter.Name = "btnQuitter";
-            btnQuitter.Size = new Size(196, 59);
+            btnQuitter.Size = new Size(224, 79);
             btnQuitter.TabIndex = 8;
             btnQuitter.Text = "Quitter";
             btnQuitter.UseVisualStyleBackColor = false;
             btnQuitter.Click += btnQuitter_Click;
             // 
+            // uiAvatar1
+            // 
+            uiAvatar1.FillColor = Color.Black;
+            uiAvatar1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiAvatar1.ForeColor = Color.White;
+            uiAvatar1.Location = new Point(582, 23);
+            uiAvatar1.MinimumSize = new Size(1, 1);
+            uiAvatar1.Name = "uiAvatar1";
+            uiAvatar1.Size = new Size(75, 75);
+            uiAvatar1.TabIndex = 9;
+            uiAvatar1.Text = "uiAvatar1";
+            // 
+            // uiButton1
+            // 
+            uiButton1.BackColor = SystemColors.ControlLight;
+            uiButton1.FillColor = Color.White;
+            uiButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiButton1.ForeColor = Color.Black;
+            uiButton1.Location = new Point(815, 119);
+            uiButton1.MinimumSize = new Size(1, 1);
+            uiButton1.Name = "uiButton1";
+            uiButton1.Size = new Size(293, 64);
+            uiButton1.TabIndex = 10;
+            uiButton1.Text = "Afficher les joueurs";
+            uiButton1.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1156, 854);
+            ClientSize = new Size(1902, 1033);
+            Controls.Add(uiButton1);
+            Controls.Add(uiAvatar1);
             Controls.Add(btnQuitter);
             Controls.Add(btnSimulerMatch);
             Controls.Add(btnMiseAJourBlessures);
@@ -159,9 +182,7 @@
             Controls.Add(btnSupprimerJoueur);
             Controls.Add(btnModifierJoueur);
             Controls.Add(btnAjouterJoueur);
-            Controls.Add(btnAfficherJoueurs);
             ForeColor = SystemColors.ControlText;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FormMain";
             Text = "Form1";
             ResumeLayout(false);
@@ -169,7 +190,7 @@
 
         #endregion
 
-        private Button btnAfficherJoueurs;
+        private Button siticoneActivityButton1;
         private Button btnAjouterJoueur;
         private Button btnModifierJoueur;
         private Button btnSupprimerJoueur;
@@ -178,5 +199,7 @@
         private Button btnMiseAJourBlessures;
         private Button btnSimulerMatch;
         private Button btnQuitter;
+        private Sunny.UI.UIAvatar uiAvatar1;
+        private Sunny.UI.UIButton uiButton1;
     }
 }
