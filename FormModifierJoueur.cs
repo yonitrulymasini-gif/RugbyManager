@@ -165,7 +165,7 @@ namespace RugbyManager
                     MessageBox.Show("Joueur modifié avec succès !", "Succès",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    FormMain formMain = new FormMain();
+                    FormAccueil formMain = new FormAccueil();
                     formMain.Show();
                     this.Close();
                 }
@@ -179,7 +179,7 @@ namespace RugbyManager
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            FormMain formMain = new FormMain();
+            FormAccueil formMain = new FormAccueil();
             formMain.Show();
             this.Close();
         }

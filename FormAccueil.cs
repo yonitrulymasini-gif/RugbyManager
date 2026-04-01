@@ -2,11 +2,12 @@ using System.Data;
 
 namespace RugbyManager
 {
-    public partial class FormMain : Form
+    public partial class FormAccueil : Form
     {
-        public FormMain()
+        public FormAccueil()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
         private void btnAjouterJoueur_Click(object sender, EventArgs e)
         {
@@ -52,7 +53,9 @@ namespace RugbyManager
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form1 formMain = new Form1();
+            formMain.Show();
+            this.Close();
         }
 
         private void siticoneButton1_Click(object sender, EventArgs e)

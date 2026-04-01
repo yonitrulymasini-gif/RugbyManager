@@ -1,6 +1,6 @@
 ﻿namespace RugbyManager
 {
-    partial class FormMain
+    partial class FormAccueil
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,7 +37,8 @@
             btnSimulerMatch = new Button();
             btnQuitter = new Button();
             uiAvatar1 = new Sunny.UI.UIAvatar();
-            uiButton1 = new Sunny.UI.UIButton();
+            uiSmoothLabel1 = new Sunny.UI.UISmoothLabel();
+            uiButton2 = new Sunny.UI.UIButton();
             SuspendLayout();
             // 
             // btnAjouterJoueur
@@ -95,11 +96,10 @@
             // lblTitre
             // 
             lblTitre.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitre.Location = new Point(652, 9);
+            lblTitre.Location = new Point(669, 15);
             lblTitre.Name = "lblTitre";
             lblTitre.Size = new Size(675, 107);
             lblTitre.TabIndex = 5;
-            lblTitre.Text = "VALORANT MANAGER";
             // 
             // btnMiseAJourBlessures
             // 
@@ -143,36 +143,56 @@
             // 
             // uiAvatar1
             // 
-            uiAvatar1.FillColor = Color.Black;
+            uiAvatar1.FillColor = Color.FromArgb(80, 160, 255);
             uiAvatar1.Font = new Font("Microsoft Sans Serif", 12F);
             uiAvatar1.ForeColor = Color.White;
-            uiAvatar1.Location = new Point(582, 23);
+            uiAvatar1.Location = new Point(699, 177);
             uiAvatar1.MinimumSize = new Size(1, 1);
             uiAvatar1.Name = "uiAvatar1";
             uiAvatar1.Size = new Size(75, 75);
             uiAvatar1.TabIndex = 9;
             uiAvatar1.Text = "uiAvatar1";
             // 
-            // uiButton1
+            // uiSmoothLabel1
             // 
-            uiButton1.BackColor = SystemColors.ControlLight;
-            uiButton1.FillColor = Color.White;
-            uiButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            uiButton1.ForeColor = Color.Black;
-            uiButton1.Location = new Point(815, 119);
-            uiButton1.MinimumSize = new Size(1, 1);
-            uiButton1.Name = "uiButton1";
-            uiButton1.Size = new Size(293, 64);
-            uiButton1.TabIndex = 10;
-            uiButton1.Text = "Afficher les joueurs";
-            uiButton1.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            uiSmoothLabel1.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiSmoothLabel1.Location = new Point(306, 24);
+            uiSmoothLabel1.Name = "uiSmoothLabel1";
+            uiSmoothLabel1.RectSize = 15;
+            uiSmoothLabel1.Size = new Size(1378, 133);
+            uiSmoothLabel1.TabIndex = 11;
+            uiSmoothLabel1.Text = "VALORANT MANAGER";
             // 
-            // FormMain
+            // uiButton2
+            // 
+            uiButton2.BackColor = SystemColors.ControlLight;
+            uiButton2.FillColor = Color.White;
+            uiButton2.FillColor2 = Color.White;
+            uiButton2.FillHoverColor = Color.DodgerBlue;
+            uiButton2.FillPressColor = Color.White;
+            uiButton2.FillSelectedColor = Color.White;
+            uiButton2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiButton2.ForeColor = Color.Black;
+            uiButton2.Location = new Point(792, 177);
+            uiButton2.MinimumSize = new Size(1, 1);
+            uiButton2.Name = "uiButton2";
+            uiButton2.RectColor = Color.White;
+            uiButton2.RectHoverColor = Color.FromArgb(224, 224, 224);
+            uiButton2.RectPressColor = Color.White;
+            uiButton2.RectSelectedColor = Color.White;
+            uiButton2.Size = new Size(293, 64);
+            uiButton2.TabIndex = 14;
+            uiButton2.Text = "PLAY";
+            uiButton2.TipsColor = Color.White;
+            uiButton2.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            // 
+            // FormAccueil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(uiButton1);
+            Controls.Add(uiButton2);
+            Controls.Add(uiSmoothLabel1);
             Controls.Add(uiAvatar1);
             Controls.Add(btnQuitter);
             Controls.Add(btnSimulerMatch);
@@ -183,7 +203,7 @@
             Controls.Add(btnModifierJoueur);
             Controls.Add(btnAjouterJoueur);
             ForeColor = SystemColors.ControlText;
-            Name = "FormMain";
+            Name = "FormAccueil";
             Text = "Form1";
             ResumeLayout(false);
         }
@@ -200,6 +220,7 @@
         private Button btnSimulerMatch;
         private Button btnQuitter;
         private Sunny.UI.UIAvatar uiAvatar1;
-        private Sunny.UI.UIButton uiButton1;
+        private Sunny.UI.UISmoothLabel uiSmoothLabel1;
+        private Sunny.UI.UIButton uiButton2;
     }
 }
