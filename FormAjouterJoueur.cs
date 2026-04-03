@@ -16,15 +16,16 @@ namespace RugbyManager
         public FormAjouterJoueur()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormAjouterJoueur_Load(object sender, EventArgs e)
         {
             // Charger les postes
-            cmbPoste.Items.Add("duelliste");
-            cmbPoste.Items.Add("controleur");
-            cmbPoste.Items.Add("initiateur");
-            cmbPoste.Items.Add("sentinelle");
+            uiComboBox1.Items.Add("duelliste");
+            uiComboBox1.Items.Add("controleur");
+            uiComboBox1.Items.Add("initiateur");
+            uiComboBox1.Items.Add("sentinelle");
 
             // Charger les équipes depuis la BDD
             ChargerEquipes();
@@ -40,10 +41,10 @@ namespace RugbyManager
                     MySqlCommand cmd = new MySqlCommand("SELECT nom FROM Equipes ORDER BY nom", conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
-                    cmbEquipe.Items.Clear();
+                    uiComboBox2.Items.Clear();
                     while (reader.Read())
                     {
-                        cmbEquipe.Items.Add(reader.GetString("nom"));
+                        uiComboBox2.Items.Add(reader.GetString("nom"));
                     }
                 }
                 catch (Exception ex)
@@ -53,10 +54,16 @@ namespace RugbyManager
                 }
             }
         }
-
-        private void btnValider_Click(object sender, EventArgs e)
+        private void uiButton6_Click(object sender, EventArgs e)
         {
-            if (txtNom.Text == "" || cmbPoste.SelectedItem == null || cmbEquipe.SelectedItem == null)
+            FormAccueil formMain = new FormAccueil();
+            formMain.Show();
+            this.Close();
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            if (uiTextBox1.Text == "" || uiComboBox1.SelectedItem == null || uiComboBox2.SelectedItem == null)
             {
                 MessageBox.Show("Veuillez remplir tous les champs !", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -71,7 +78,7 @@ namespace RugbyManager
 
                     MySqlCommand cmdEquipe = new MySqlCommand(
                         "SELECT id FROM Equipes WHERE nom = ?", conn);
-                    cmdEquipe.Parameters.AddWithValue("?", cmbEquipe.SelectedItem.ToString());
+                    cmdEquipe.Parameters.AddWithValue("?", uiComboBox2.SelectedItem.ToString());
                     object result = cmdEquipe.ExecuteScalar();
 
                     if (result == null)
@@ -87,13 +94,13 @@ namespace RugbyManager
                         INSERT INTO Joueurs (nom, equipe_id, poste, vitesse, endurance, force_physique, technique) 
                         VALUES (?, ?, ?, ?, ?, ?, ?)", conn);
 
-                    cmd.Parameters.AddWithValue("@nom", txtNom.Text);
+                    cmd.Parameters.AddWithValue("@nom", uiTextBox1.Text);
                     cmd.Parameters.AddWithValue("@equipeID", equipeID);
-                    cmd.Parameters.AddWithValue("@poste", cmbPoste.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@vitesse", (int)nudVitesse.Value);
-                    cmd.Parameters.AddWithValue("@endurance", (int)nudEndurance.Value);
-                    cmd.Parameters.AddWithValue("@force", (int)nudForce.Value);
-                    cmd.Parameters.AddWithValue("@technique", (int)nudTechnique.Value);
+                    cmd.Parameters.AddWithValue("@poste", uiComboBox1.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@vitesse", (int)uiIntegerUpDown1.Value);
+                    cmd.Parameters.AddWithValue("@endurance", (int)uiIntegerUpDown2.Value);
+                    cmd.Parameters.AddWithValue("@force", (int)uiIntegerUpDown3.Value);
+                    cmd.Parameters.AddWithValue("@technique", (int)uiIntegerUpDown4.Value);
 
                     cmd.ExecuteNonQuery();
 
@@ -111,12 +118,32 @@ namespace RugbyManager
                 }
             }
         }
-
-        private void btnRetour_Click(object sender, EventArgs e)
+        private void uiTextBox1_TextChanged(object sender, EventArgs e)
         {
-            FormAccueil formMain = new FormAccueil();
-            formMain.Show();
-            this.Close();
+
+        }
+        private void uiComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiLedLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void uiNumPadTextBox1_ValueChanged(object sender, string value)
+        {
+
+        }
+
+        private void uiIntegerUpDown1_ValueChanged(object sender, int value)
+        {
+
         }
     }
 }

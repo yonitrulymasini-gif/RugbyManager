@@ -17,6 +17,7 @@ namespace RugbyManager
         public FormModifierJoueur()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormModifierJoueur_Load(object sender, EventArgs e)
@@ -123,61 +124,69 @@ namespace RugbyManager
                 }
             }
         }
-
-        private void btnValider_Click(object sender, EventArgs e)
+        private void btnRetour_Click(object sender, EventArgs e)
         {
-            if (joueurIDSelectionne == -1 || cmbPoste.SelectedItem == null || cmbEquipe.SelectedItem == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un joueur !", "Erreur",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            FormAccueil formMain = new FormAccueil();
+            formMain.Show();
+            this.Close();
+        }
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
             {
-                try
+                if (joueurIDSelectionne == -1 || cmbPoste.SelectedItem == null || cmbEquipe.SelectedItem == null)
                 {
-                    conn.Open();
+                    MessageBox.Show("Veuillez sélectionner un joueur !", "Erreur",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    // Récupérer l'ID de l'équipe
-                    MySqlCommand cmdEquipe = new MySqlCommand(
-                        "SELECT id FROM Equipes WHERE nom = @nom", conn);
-                    cmdEquipe.Parameters.AddWithValue("@nom", cmbEquipe.SelectedItem.ToString());
-                    int equipeID = Convert.ToInt32(cmdEquipe.ExecuteScalar());
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
 
-                    // Mettre à jour le joueur
-                    MySqlCommand cmd = new MySqlCommand(@"
+                        // Récupérer l'ID de l'équipe
+                        MySqlCommand cmdEquipe = new MySqlCommand(
+                            "SELECT id FROM Equipes WHERE nom = @nom", conn);
+                        cmdEquipe.Parameters.AddWithValue("@nom", cmbEquipe.SelectedItem.ToString());
+                        int equipeID = Convert.ToInt32(cmdEquipe.ExecuteScalar());
+
+                        // Mettre à jour le joueur
+                        MySqlCommand cmd = new MySqlCommand(@"
                         UPDATE Joueurs 
                         SET poste = @poste, equipe_id = @equipeID, vitesse = @vitesse, 
                             endurance = @endurance, force_physique = @force, technique = @technique
                         WHERE id = @id", conn);
 
-                    cmd.Parameters.AddWithValue("@poste", cmbPoste.SelectedItem.ToString());
-                    cmd.Parameters.AddWithValue("@equipeID", equipeID);
-                    cmd.Parameters.AddWithValue("@vitesse", (int)nudVitesse.Value);
-                    cmd.Parameters.AddWithValue("@endurance", (int)nudEndurance.Value);
-                    cmd.Parameters.AddWithValue("@force", (int)nudForce.Value);
-                    cmd.Parameters.AddWithValue("@technique", (int)nudTechnique.Value);
-                    cmd.Parameters.AddWithValue("@id", joueurIDSelectionne);
+                        cmd.Parameters.AddWithValue("@poste", cmbPoste.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@equipeID", equipeID);
+                        cmd.Parameters.AddWithValue("@vitesse", (int)nudVitesse.Value);
+                        cmd.Parameters.AddWithValue("@endurance", (int)nudEndurance.Value);
+                        cmd.Parameters.AddWithValue("@force", (int)nudForce.Value);
+                        cmd.Parameters.AddWithValue("@technique", (int)nudTechnique.Value);
+                        cmd.Parameters.AddWithValue("@id", joueurIDSelectionne);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Joueur modifié avec succès !", "Succès",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Joueur modifié avec succès !", "Succès",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    FormAccueil formMain = new FormAccueil();
-                    formMain.Show();
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erreur : " + ex.Message, "Erreur",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        FormAccueil formMain = new FormAccueil();
+                        formMain.Show();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur : " + ex.Message, "Erreur",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
-        private void btnRetour_Click(object sender, EventArgs e)
+        private void uiButton6_Click(object sender, EventArgs e)
         {
             FormAccueil formMain = new FormAccueil();
             formMain.Show();

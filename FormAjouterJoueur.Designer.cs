@@ -28,240 +28,312 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            lblNom = new Label();
-            lblPoste = new Label();
-            imageList1 = new ImageList(components);
-            lblEquipe = new Label();
-            lblVitesse = new Label();
-            lblEndurance = new Label();
-            lblForce = new Label();
-            lblTechnique = new Label();
-            lblAjouterJoueur = new Label();
-            txtNom = new TextBox();
-            btnValider = new Button();
-            btnRetour = new Button();
-            cmbEquipe = new ComboBox();
-            nudVitesse = new NumericUpDown();
-            nudEndurance = new NumericUpDown();
-            nudForce = new NumericUpDown();
-            nudTechnique = new NumericUpDown();
-            cmbPoste = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)nudVitesse).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudEndurance).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudForce).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudTechnique).BeginInit();
+            uiSmoothLabel1 = new Sunny.UI.UISmoothLabel();
+            uiButton6 = new Sunny.UI.UIButton();
+            uiButton1 = new Sunny.UI.UIButton();
+            uiTextBox1 = new Sunny.UI.UITextBox();
+            uiLedLabel1 = new Sunny.UI.UILedLabel();
+            uiLedLabel2 = new Sunny.UI.UILedLabel();
+            uiComboBox1 = new Sunny.UI.UIComboBox();
+            uiComboBox2 = new Sunny.UI.UIComboBox();
+            uiLedLabel3 = new Sunny.UI.UILedLabel();
+            uiLedLabel4 = new Sunny.UI.UILedLabel();
+            uiLedLabel5 = new Sunny.UI.UILedLabel();
+            uiLedLabel6 = new Sunny.UI.UILedLabel();
+            uiLedLabel7 = new Sunny.UI.UILedLabel();
+            uiIntegerUpDown1 = new Sunny.UI.UIIntegerUpDown();
+            uiIntegerUpDown2 = new Sunny.UI.UIIntegerUpDown();
+            uiIntegerUpDown3 = new Sunny.UI.UIIntegerUpDown();
+            uiIntegerUpDown4 = new Sunny.UI.UIIntegerUpDown();
             SuspendLayout();
             // 
-            // lblNom
+            // uiSmoothLabel1
             // 
-            lblNom.AutoSize = true;
-            lblNom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNom.Location = new Point(78, 120);
-            lblNom.Name = "lblNom";
-            lblNom.Size = new Size(49, 21);
-            lblNom.TabIndex = 0;
-            lblNom.Text = "Nom ";
+            uiSmoothLabel1.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiSmoothLabel1.Location = new Point(622, 154);
+            uiSmoothLabel1.Name = "uiSmoothLabel1";
+            uiSmoothLabel1.RectSize = 15;
+            uiSmoothLabel1.Size = new Size(590, 125);
+            uiSmoothLabel1.TabIndex = 23;
+            uiSmoothLabel1.Text = "AJOUTER";
             // 
-            // lblPoste
+            // uiButton6
             // 
-            lblPoste.AutoSize = true;
-            lblPoste.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPoste.Location = new Point(76, 165);
-            lblPoste.Name = "lblPoste";
-            lblPoste.Size = new Size(47, 21);
-            lblPoste.TabIndex = 1;
-            lblPoste.Text = "Poste";
+            uiButton6.BackColor = SystemColors.ControlLight;
+            uiButton6.FillColor = Color.White;
+            uiButton6.FillColor2 = Color.White;
+            uiButton6.FillHoverColor = Color.DodgerBlue;
+            uiButton6.FillPressColor = Color.White;
+            uiButton6.FillSelectedColor = Color.White;
+            uiButton6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiButton6.ForeColor = Color.Black;
+            uiButton6.Location = new Point(762, 844);
+            uiButton6.MinimumSize = new Size(1, 1);
+            uiButton6.Name = "uiButton6";
+            uiButton6.RectColor = Color.White;
+            uiButton6.RectHoverColor = Color.FromArgb(224, 224, 224);
+            uiButton6.RectPressColor = Color.White;
+            uiButton6.RectSelectedColor = Color.White;
+            uiButton6.Size = new Size(293, 64);
+            uiButton6.TabIndex = 24;
+            uiButton6.Text = "RETOUR";
+            uiButton6.TipsColor = Color.White;
+            uiButton6.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            uiButton6.Click += uiButton6_Click;
             // 
-            // imageList1
+            // uiButton1
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
+            uiButton1.BackColor = SystemColors.ControlLight;
+            uiButton1.FillColor = Color.White;
+            uiButton1.FillColor2 = Color.White;
+            uiButton1.FillHoverColor = Color.DodgerBlue;
+            uiButton1.FillPressColor = Color.White;
+            uiButton1.FillSelectedColor = Color.White;
+            uiButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            uiButton1.ForeColor = Color.Black;
+            uiButton1.Location = new Point(762, 760);
+            uiButton1.MinimumSize = new Size(1, 1);
+            uiButton1.Name = "uiButton1";
+            uiButton1.RectColor = Color.White;
+            uiButton1.RectHoverColor = Color.FromArgb(224, 224, 224);
+            uiButton1.RectPressColor = Color.White;
+            uiButton1.RectSelectedColor = Color.White;
+            uiButton1.Size = new Size(293, 64);
+            uiButton1.TabIndex = 25;
+            uiButton1.Text = "VALIDER";
+            uiButton1.TipsColor = Color.White;
+            uiButton1.TipsFont = new Font("Microsoft Sans Serif", 9F);
+            uiButton1.Click += uiButton1_Click;
             // 
-            // lblEquipe
+            // uiTextBox1
             // 
-            lblEquipe.AutoSize = true;
-            lblEquipe.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEquipe.Location = new Point(76, 208);
-            lblEquipe.Name = "lblEquipe";
-            lblEquipe.Size = new Size(57, 21);
-            lblEquipe.TabIndex = 2;
-            lblEquipe.Text = "Équipe";
+            uiTextBox1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiTextBox1.Location = new Point(851, 347);
+            uiTextBox1.Margin = new Padding(4, 5, 4, 5);
+            uiTextBox1.MinimumSize = new Size(1, 16);
+            uiTextBox1.Name = "uiTextBox1";
+            uiTextBox1.Padding = new Padding(5);
+            uiTextBox1.ShowText = false;
+            uiTextBox1.Size = new Size(262, 37);
+            uiTextBox1.TabIndex = 27;
+            uiTextBox1.TextAlignment = ContentAlignment.MiddleLeft;
+            uiTextBox1.Watermark = "";
+            uiTextBox1.TextChanged += uiTextBox1_TextChanged;
             // 
-            // lblVitesse
+            // uiLedLabel1
             // 
-            lblVitesse.AutoSize = true;
-            lblVitesse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblVitesse.Location = new Point(74, 254);
-            lblVitesse.Name = "lblVitesse";
-            lblVitesse.Size = new Size(59, 21);
-            lblVitesse.TabIndex = 3;
-            lblVitesse.Text = "Vitesse";
+            uiLedLabel1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel1.Location = new Point(724, 344);
+            uiLedLabel1.MinimumSize = new Size(1, 1);
+            uiLedLabel1.Name = "uiLedLabel1";
+            uiLedLabel1.Size = new Size(125, 44);
+            uiLedLabel1.TabIndex = 30;
+            uiLedLabel1.Text = "NOM :";
             // 
-            // lblEndurance
+            // uiLedLabel2
             // 
-            lblEndurance.AutoSize = true;
-            lblEndurance.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEndurance.Location = new Point(72, 301);
-            lblEndurance.Name = "lblEndurance";
-            lblEndurance.Size = new Size(83, 21);
-            lblEndurance.TabIndex = 4;
-            lblEndurance.Text = "Endurance";
+            uiLedLabel2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel2.Location = new Point(706, 394);
+            uiLedLabel2.MinimumSize = new Size(1, 1);
+            uiLedLabel2.Name = "uiLedLabel2";
+            uiLedLabel2.Size = new Size(125, 44);
+            uiLedLabel2.TabIndex = 31;
+            uiLedLabel2.Text = "POSTE :";
             // 
-            // lblForce
+            // uiComboBox1
             // 
-            lblForce.AutoSize = true;
-            lblForce.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblForce.Location = new Point(72, 345);
-            lblForce.Name = "lblForce";
-            lblForce.Size = new Size(48, 21);
-            lblForce.TabIndex = 5;
-            lblForce.Text = "Force";
+            uiComboBox1.DataSource = null;
+            uiComboBox1.FillColor = Color.White;
+            uiComboBox1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiComboBox1.ItemHoverColor = Color.FromArgb(155, 200, 255);
+            uiComboBox1.ItemSelectForeColor = Color.FromArgb(235, 243, 255);
+            uiComboBox1.Location = new Point(851, 402);
+            uiComboBox1.Margin = new Padding(4, 5, 4, 5);
+            uiComboBox1.MinimumSize = new Size(63, 0);
+            uiComboBox1.Name = "uiComboBox1";
+            uiComboBox1.Padding = new Padding(0, 0, 30, 2);
+            uiComboBox1.Size = new Size(262, 36);
+            uiComboBox1.SymbolSize = 24;
+            uiComboBox1.TabIndex = 32;
+            uiComboBox1.TextAlignment = ContentAlignment.MiddleLeft;
+            uiComboBox1.Watermark = "";
+            uiComboBox1.SelectedIndexChanged += uiComboBox1_SelectedIndexChanged;
             // 
-            // lblTechnique
+            // uiComboBox2
             // 
-            lblTechnique.AutoSize = true;
-            lblTechnique.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTechnique.Location = new Point(72, 386);
-            lblTechnique.Name = "lblTechnique";
-            lblTechnique.Size = new Size(79, 21);
-            lblTechnique.TabIndex = 6;
-            lblTechnique.Text = "Technique";
+            uiComboBox2.DataSource = null;
+            uiComboBox2.FillColor = Color.White;
+            uiComboBox2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiComboBox2.ItemHoverColor = Color.FromArgb(155, 200, 255);
+            uiComboBox2.ItemSelectForeColor = Color.FromArgb(235, 243, 255);
+            uiComboBox2.Location = new Point(849, 456);
+            uiComboBox2.Margin = new Padding(4, 5, 4, 5);
+            uiComboBox2.MinimumSize = new Size(63, 0);
+            uiComboBox2.Name = "uiComboBox2";
+            uiComboBox2.Padding = new Padding(0, 0, 30, 2);
+            uiComboBox2.Size = new Size(262, 36);
+            uiComboBox2.SymbolSize = 24;
+            uiComboBox2.TabIndex = 33;
+            uiComboBox2.TextAlignment = ContentAlignment.MiddleLeft;
+            uiComboBox2.Watermark = "";
+            uiComboBox2.SelectedIndexChanged += uiComboBox2_SelectedIndexChanged;
             // 
-            // lblAjouterJoueur
+            // uiLedLabel3
             // 
-            lblAjouterJoueur.AutoSize = true;
-            lblAjouterJoueur.Font = new Font("Impact", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAjouterJoueur.Location = new Point(357, 148);
-            lblAjouterJoueur.Name = "lblAjouterJoueur";
-            lblAjouterJoueur.Size = new Size(394, 60);
-            lblAjouterJoueur.TabIndex = 7;
-            lblAjouterJoueur.Text = "AJOUTER UN JOUEUR";
+            uiLedLabel3.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel3.Location = new Point(687, 451);
+            uiLedLabel3.MinimumSize = new Size(1, 1);
+            uiLedLabel3.Name = "uiLedLabel3";
+            uiLedLabel3.Size = new Size(162, 44);
+            uiLedLabel3.TabIndex = 34;
+            uiLedLabel3.Text = "EQUIPE : ";
             // 
-            // txtNom
+            // uiLedLabel4
             // 
-            txtNom.Location = new Point(204, 112);
-            txtNom.Name = "txtNom";
-            txtNom.Size = new Size(100, 23);
-            txtNom.TabIndex = 8;
+            uiLedLabel4.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel4.Location = new Point(662, 503);
+            uiLedLabel4.MinimumSize = new Size(1, 1);
+            uiLedLabel4.Name = "uiLedLabel4";
+            uiLedLabel4.Size = new Size(187, 44);
+            uiLedLabel4.TabIndex = 35;
+            uiLedLabel4.Text = "VITESSE : ";
             // 
-            // btnValider
+            // uiLedLabel5
             // 
-            btnValider.Location = new Point(408, 301);
-            btnValider.Name = "btnValider";
-            btnValider.Size = new Size(119, 31);
-            btnValider.TabIndex = 15;
-            btnValider.Text = "Valider";
-            btnValider.UseVisualStyleBackColor = true;
-            btnValider.Click += btnValider_Click;
+            uiLedLabel5.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel5.Location = new Point(622, 554);
+            uiLedLabel5.MinimumSize = new Size(1, 1);
+            uiLedLabel5.Name = "uiLedLabel5";
+            uiLedLabel5.Size = new Size(209, 44);
+            uiLedLabel5.TabIndex = 36;
+            uiLedLabel5.Text = "ENDURANCE :";
             // 
-            // btnRetour
+            // uiLedLabel6
             // 
-            btnRetour.Location = new Point(567, 301);
-            btnRetour.Name = "btnRetour";
-            btnRetour.Size = new Size(119, 31);
-            btnRetour.TabIndex = 16;
-            btnRetour.Text = "Retour";
-            btnRetour.UseVisualStyleBackColor = true;
-            btnRetour.Click += btnRetour_Click;
+            uiLedLabel6.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel6.Location = new Point(697, 604);
+            uiLedLabel6.MinimumSize = new Size(1, 1);
+            uiLedLabel6.Name = "uiLedLabel6";
+            uiLedLabel6.Size = new Size(151, 44);
+            uiLedLabel6.TabIndex = 37;
+            uiLedLabel6.Text = "FORCE : ";
             // 
-            // cmbEquipe
+            // uiLedLabel7
             // 
-            cmbEquipe.FormattingEnabled = true;
-            cmbEquipe.Location = new Point(204, 210);
-            cmbEquipe.Name = "cmbEquipe";
-            cmbEquipe.Size = new Size(100, 23);
-            cmbEquipe.TabIndex = 17;
+            uiLedLabel7.Font = new Font("Microsoft Sans Serif", 12F);
+            uiLedLabel7.Location = new Point(628, 656);
+            uiLedLabel7.MinimumSize = new Size(1, 1);
+            uiLedLabel7.Name = "uiLedLabel7";
+            uiLedLabel7.Size = new Size(215, 44);
+            uiLedLabel7.TabIndex = 38;
+            uiLedLabel7.Text = "TECHNIQUE : ";
+            uiLedLabel7.Click += uiLedLabel7_Click;
             // 
-            // nudVitesse
+            // uiIntegerUpDown1
             // 
-            nudVitesse.Location = new Point(204, 257);
-            nudVitesse.Name = "nudVitesse";
-            nudVitesse.Size = new Size(100, 23);
-            nudVitesse.TabIndex = 18;
+            uiIntegerUpDown1.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown1.Location = new Point(851, 505);
+            uiIntegerUpDown1.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown1.Maximum = 100D;
+            uiIntegerUpDown1.Minimum = 0D;
+            uiIntegerUpDown1.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown1.Name = "uiIntegerUpDown1";
+            uiIntegerUpDown1.Padding = new Padding(5);
+            uiIntegerUpDown1.ShowText = false;
+            uiIntegerUpDown1.Size = new Size(265, 36);
+            uiIntegerUpDown1.TabIndex = 49;
+            uiIntegerUpDown1.Text = "0";
+            uiIntegerUpDown1.TextAlignment = ContentAlignment.MiddleCenter;
+            uiIntegerUpDown1.ValueChanged += uiIntegerUpDown1_ValueChanged;
             // 
-            // nudEndurance
+            // uiIntegerUpDown2
             // 
-            nudEndurance.Location = new Point(204, 301);
-            nudEndurance.Name = "nudEndurance";
-            nudEndurance.Size = new Size(100, 23);
-            nudEndurance.TabIndex = 19;
+            uiIntegerUpDown2.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown2.Location = new Point(850, 555);
+            uiIntegerUpDown2.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown2.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown2.Name = "uiIntegerUpDown2";
+            uiIntegerUpDown2.Padding = new Padding(5);
+            uiIntegerUpDown2.ShowText = false;
+            uiIntegerUpDown2.Size = new Size(265, 36);
+            uiIntegerUpDown2.TabIndex = 50;
+            uiIntegerUpDown2.Text = "0";
+            uiIntegerUpDown2.TextAlignment = ContentAlignment.MiddleCenter;
             // 
-            // nudForce
+            // uiIntegerUpDown3
             // 
-            nudForce.Location = new Point(204, 343);
-            nudForce.Name = "nudForce";
-            nudForce.Size = new Size(100, 23);
-            nudForce.TabIndex = 20;
+            uiIntegerUpDown3.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown3.Location = new Point(851, 606);
+            uiIntegerUpDown3.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown3.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown3.Name = "uiIntegerUpDown3";
+            uiIntegerUpDown3.Padding = new Padding(5);
+            uiIntegerUpDown3.ShowText = false;
+            uiIntegerUpDown3.Size = new Size(265, 36);
+            uiIntegerUpDown3.TabIndex = 51;
+            uiIntegerUpDown3.Text = "0";
+            uiIntegerUpDown3.TextAlignment = ContentAlignment.MiddleCenter;
             // 
-            // nudTechnique
+            // uiIntegerUpDown4
             // 
-            nudTechnique.Location = new Point(204, 386);
-            nudTechnique.Name = "nudTechnique";
-            nudTechnique.Size = new Size(100, 23);
-            nudTechnique.TabIndex = 21;
-            // 
-            // cmbPoste
-            // 
-            cmbPoste.FormattingEnabled = true;
-            cmbPoste.Location = new Point(204, 163);
-            cmbPoste.Name = "cmbPoste";
-            cmbPoste.Size = new Size(100, 23);
-            cmbPoste.TabIndex = 22;
+            uiIntegerUpDown4.Font = new Font("Microsoft Sans Serif", 12F);
+            uiIntegerUpDown4.Location = new Point(850, 660);
+            uiIntegerUpDown4.Margin = new Padding(4, 5, 4, 5);
+            uiIntegerUpDown4.MinimumSize = new Size(1, 16);
+            uiIntegerUpDown4.Name = "uiIntegerUpDown4";
+            uiIntegerUpDown4.Padding = new Padding(5);
+            uiIntegerUpDown4.ShowText = false;
+            uiIntegerUpDown4.Size = new Size(265, 36);
+            uiIntegerUpDown4.TabIndex = 51;
+            uiIntegerUpDown4.Text = "0";
+            uiIntegerUpDown4.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // FormAjouterJoueur
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 450);
-            Controls.Add(cmbPoste);
-            Controls.Add(nudTechnique);
-            Controls.Add(nudForce);
-            Controls.Add(nudEndurance);
-            Controls.Add(nudVitesse);
-            Controls.Add(cmbEquipe);
-            Controls.Add(btnRetour);
-            Controls.Add(btnValider);
-            Controls.Add(txtNom);
-            Controls.Add(lblAjouterJoueur);
-            Controls.Add(lblTechnique);
-            Controls.Add(lblForce);
-            Controls.Add(lblEndurance);
-            Controls.Add(lblVitesse);
-            Controls.Add(lblEquipe);
-            Controls.Add(lblPoste);
-            Controls.Add(lblNom);
+            ClientSize = new Size(1902, 1033);
+            Controls.Add(uiIntegerUpDown4);
+            Controls.Add(uiIntegerUpDown3);
+            Controls.Add(uiIntegerUpDown2);
+            Controls.Add(uiIntegerUpDown1);
+            Controls.Add(uiLedLabel7);
+            Controls.Add(uiLedLabel6);
+            Controls.Add(uiLedLabel5);
+            Controls.Add(uiLedLabel4);
+            Controls.Add(uiLedLabel3);
+            Controls.Add(uiComboBox2);
+            Controls.Add(uiComboBox1);
+            Controls.Add(uiLedLabel2);
+            Controls.Add(uiLedLabel1);
+            Controls.Add(uiTextBox1);
+            Controls.Add(uiButton1);
+            Controls.Add(uiButton6);
+            Controls.Add(uiSmoothLabel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormAjouterJoueur";
             Text = "FormAjouterJoueur";
             Load += FormAjouterJoueur_Load;
-            ((System.ComponentModel.ISupportInitialize)nudVitesse).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudEndurance).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudForce).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudTechnique).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblNom;
-        private Label lblPoste;
-        private ImageList imageList1;
-        private Label lblEquipe;
-        private Label lblVitesse;
-        private Label lblEndurance;
-        private Label lblForce;
-        private Label lblTechnique;
-        private Label lblAjouterJoueur;
-        private TextBox txtNom;
-        private Button btnValider;
-        private Button btnRetour;
-        private ComboBox cmbEquipe;
-        private NumericUpDown nudVitesse;
-        private NumericUpDown nudEndurance;
-        private NumericUpDown nudForce;
-        private NumericUpDown nudTechnique;
-        private ComboBox cmbPoste;
+        private Sunny.UI.UISmoothLabel uiSmoothLabel1;
+        private Sunny.UI.UIButton uiButton6;
+        private Sunny.UI.UIButton uiButton1;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UILedLabel uiLedLabel1;
+        private Sunny.UI.UILedLabel uiLedLabel2;
+        private Sunny.UI.UIComboBox uiComboBox1;
+        private Sunny.UI.UIComboBox uiComboBox2;
+        private Sunny.UI.UILedLabel uiLedLabel3;
+        private Sunny.UI.UILedLabel uiLedLabel4;
+        private Sunny.UI.UILedLabel uiLedLabel5;
+        private Sunny.UI.UILedLabel uiLedLabel6;
+        private Sunny.UI.UILedLabel uiLedLabel7;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown1;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown2;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown3;
+        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown4;
     }
 }

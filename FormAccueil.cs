@@ -9,59 +9,52 @@ namespace RugbyManager
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
-        private void btnAjouterJoueur_Click(object sender, EventArgs e)
+        private void uiButton2_Click(object sender, EventArgs e)
+        {
+            FormJoueurs formJoueurs = new FormJoueurs();
+            formJoueurs.Show();
+            this.Hide();
+        }
+        private void uiButton1_Click(object sender, EventArgs e)
         {
             FormAjouterJoueur formAjouter = new FormAjouterJoueur();
             formAjouter.Show();
             this.Hide();
         }
-
-        private void btnModifierJoueur_Click(object sender, EventArgs e)
-        {
-            FormModifierJoueur formModifier = new FormModifierJoueur();
-            formModifier.Show();
-            this.Hide();
-        }
-
-        private void btnSupprimerJoueur_Click(object sender, EventArgs e)
+        private void uiButton3_Click(object sender, EventArgs e)
         {
             FormSupprimerJoueur formSupprimer = new FormSupprimerJoueur();
             formSupprimer.Show();
             this.Hide();
         }
-
-        private void btnGererEquipes_Click(object sender, EventArgs e)
+        private void uiButton4_Click(object sender, EventArgs e)
         {
-            FormGererEquipes formEquipes = new FormGererEquipes();
-            formEquipes.Show();
+            FormModifierJoueur formModifier = new FormModifierJoueur();
+            formModifier.Show();
             this.Hide();
         }
-
-        private void btnSimulerMatch_Click(object sender, EventArgs e)
+        private void uiButton5_Click(object sender, EventArgs e)
         {
             FormSimulerMatch simulerMatch = new FormSimulerMatch();
             simulerMatch.Show();
             this.Hide();
         }
-
-        private void btnMiseAJourBlessures_Click(object sender, EventArgs e)
-        {
-            FormMiseAJourBlessures formBlessures = new FormMiseAJourBlessures();
-            formBlessures.Show();
-            this.Hide();
-        }
-
-        private void btnQuitter_Click(object sender, EventArgs e)
+        private void uiButton6_Click(object sender, EventArgs e)
         {
             Form1 formMain = new Form1();
             formMain.Show();
             this.Close();
         }
-
-        private void siticoneButton1_Click(object sender, EventArgs e)
+        private void uiButton7_Click(object sender, EventArgs e)
         {
-            FormJoueurs formJoueurs = new FormJoueurs();
-            formJoueurs.Show();
+            FormGererEquipes formEquipes = new FormGererEquipes();
+            formEquipes.Show();
+            this.Hide();
+        }
+        private void uiButton8_Click(object sender, EventArgs e)
+        {
+            FormMiseAJourBlessures formBlessures = new FormMiseAJourBlessures();
+            formBlessures.Show();
             this.Hide();
         }
     }

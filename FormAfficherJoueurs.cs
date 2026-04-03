@@ -16,6 +16,7 @@ namespace RugbyManager
         public FormJoueurs()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormJoueurs_Load(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace RugbyManager
                         );
                     }
 
-                    dgvJoueurs.DataSource = dt;
+                    uiDataGridView1.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
@@ -84,12 +85,26 @@ namespace RugbyManager
             }
 
         }
-
-        private void btnRetour_Click(object sender, EventArgs e)
+        private void uiButton6_Click(object sender, EventArgs e)
         {
             FormAccueil formMain = new FormAccueil();
             formMain.Show();
             this.Close();
+        }
+
+        private void uiSmoothLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvJoueurs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
