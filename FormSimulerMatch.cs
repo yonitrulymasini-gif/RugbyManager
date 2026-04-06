@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -21,7 +17,45 @@ namespace RugbyManager
 
         private void SimulerMatch_Load(object sender, EventArgs e)
         {
+            dgvJoueurs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvJoueurs.MultiSelect = false;
+            dgvJoueurs.ReadOnly = true;
+            dgvJoueurs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             AfficherJoueursDisponibles();
+            ChargerEquipesAdversaires();
+        }
+
+        private void ChargerEquipesAdversaires()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("SELECT id, nom FROM Equipes ORDER BY nom", conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("id");
+                    dt.Columns.Add("nom");
+
+                    while (reader.Read())
+                    {
+                        dt.Rows.Add(reader.GetInt32("id"), reader.GetString("nom"));
+                    }
+
+                    cmbAdversaire.DataSource = dt;
+                    cmbAdversaire.DisplayMember = "nom";
+                    cmbAdversaire.ValueMember = "id";
+                    cmbAdversaire.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur chargement équipes : " + ex.Message, "Erreur",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void AfficherJoueursDisponibles()
@@ -87,71 +121,65 @@ namespace RugbyManager
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
-            if (txtAdversaire.Text == "")
+            if (cmbAdversaire.SelectedIndex == -1)
             {
-                MessageBox.Show("Veuillez saisir le nom de l'adversaire !", "Erreur",
+                MessageBox.Show("Veuillez sélectionner un adversaire !", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+<<<<<<< Updated upstream:FormSimulerMatch.cs
             if (uiDataGridView1.Rows.Count < 1)
+=======
+            if (dgvJoueurs.Rows.Count == 0 || dgvJoueurs.Rows[0].IsNewRow)
+>>>>>>> Stashed changes:SimulerMatch.cs
             {
-                MessageBox.Show("Pas assez de joueurs disponibles !", "Erreur",
+                MessageBox.Show("Pas de joueurs disponibles !", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Calculer la moyenne des stats de l'équipe
+            string nomAdversaire = cmbAdversaire.Text;
+
             double totalStats = 0;
             int nbJoueurs = 0;
             foreach (DataGridViewRow row in uiDataGridView1.Rows)
             {
                 if (row.IsNewRow) continue;
-                int vitesse = Convert.ToInt32(row.Cells["Vitesse"].Value);
-                int endurance = Convert.ToInt32(row.Cells["Endurance"].Value);
-                int force = Convert.ToInt32(row.Cells["Force"].Value);
-                int technique = Convert.ToInt32(row.Cells["Technique"].Value);
-                totalStats += (vitesse + endurance + force + technique) / 4.0;
+                totalStats += (Convert.ToInt32(row.Cells["Vitesse"].Value) +
+                              Convert.ToInt32(row.Cells["Endurance"].Value) +
+                              Convert.ToInt32(row.Cells["Force"].Value) +
+                              Convert.ToInt32(row.Cells["Technique"].Value)) / 4.0;
                 nbJoueurs++;
             }
 
             double moyenneEquipe = nbJoueurs > 0 ? totalStats / nbJoueurs : 50;
-
-            // Générer les scores selon la moyenne
             Random rand = new Random();
-            double chanceVictoire = moyenneEquipe / 100.0; // ex: 75 stats = 75% de chance
+            double chanceVictoire = moyenneEquipe / 100.0;
             bool gagne = rand.NextDouble() < chanceVictoire;
 
-            // Générer des scores aléatoires réalistes
-            int scoreNous, scoreAdversaire;
-            if (gagne)
-            {
-                scoreNous = rand.Next(10, 30);
-                scoreAdversaire = rand.Next(0, scoreNous);
-            }
-            else
-            {
-                scoreAdversaire = rand.Next(10, 30);
-                scoreNous = rand.Next(0, scoreAdversaire);
-            }
+            int scoreNous = gagne ? rand.Next(10, 30) : rand.Next(0, 25);
+            int scoreAdversaire = gagne ? rand.Next(0, scoreNous) : rand.Next(10, 30);
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-
-                    // Enregistrer le match
                     MySqlCommand cmdMatch = new MySqlCommand(@"
                         INSERT INTO Matchs (adversaire, score_nous, score_adversaire) 
                         VALUES (@adversaire, @scoreNous, @scoreAdversaire)", conn);
-                    cmdMatch.Parameters.AddWithValue("@adversaire", txtAdversaire.Text);
+                    cmdMatch.Parameters.AddWithValue("@adversaire", nomAdversaire);
                     cmdMatch.Parameters.AddWithValue("@scoreNous", scoreNous);
                     cmdMatch.Parameters.AddWithValue("@scoreAdversaire", scoreAdversaire);
                     cmdMatch.ExecuteNonQuery();
 
+<<<<<<< Updated upstream:FormSimulerMatch.cs
                     // Mettre à jour les stats et blessures
                     foreach (DataGridViewRow row in uiDataGridView1.Rows)
+=======
+                    foreach (DataGridViewRow row in dgvJoueurs.Rows)
+>>>>>>> Stashed changes:SimulerMatch.cs
                     {
                         if (row.IsNewRow) continue;
                         int id = Convert.ToInt32(row.Cells["ID"].Value);
@@ -159,9 +187,8 @@ namespace RugbyManager
                         if (gagne)
                         {
                             MySqlCommand cmdUpdate = new MySqlCommand(@"
-                                UPDATE Joueurs 
-                                SET technique = LEAST(technique + 3, 100), 
-                                    vitesse = LEAST(vitesse + 1, 100) 
+                                UPDATE Joueurs SET technique = LEAST(technique + 3, 100), 
+                                                   vitesse = LEAST(vitesse + 1, 100) 
                                 WHERE id = @id", conn);
                             cmdUpdate.Parameters.AddWithValue("@id", id);
                             cmdUpdate.ExecuteNonQuery();
@@ -169,28 +196,25 @@ namespace RugbyManager
                         else
                         {
                             MySqlCommand cmdUpdate = new MySqlCommand(@"
-                                UPDATE Joueurs 
-                                SET endurance = GREATEST(endurance - 1, 0) 
+                                UPDATE Joueurs SET endurance = GREATEST(endurance - 1, 0) 
                                 WHERE id = @id", conn);
                             cmdUpdate.Parameters.AddWithValue("@id", id);
                             cmdUpdate.ExecuteNonQuery();
                         }
 
-                        // Risque de blessure 20%
                         if (rand.NextDouble() < 0.2)
                         {
                             MySqlCommand cmdBlesse = new MySqlCommand(@"
-                                UPDATE Joueurs 
-                                SET blesse = TRUE, matchs_indisponibles = 3 
+                                UPDATE Joueurs SET blesse = TRUE, matchs_indisponibles = 3 
                                 WHERE id = @id", conn);
                             cmdBlesse.Parameters.AddWithValue("@id", id);
                             cmdBlesse.ExecuteNonQuery();
                         }
                     }
 
-                    string resultat = gagne ? "VICTOIRE !" : "DÉFAITE !";
+                    string resultat = gagne ? "🎉 VICTOIRE !" : "😞 DÉFAITE !";
                     MessageBox.Show(
-                        $"{resultat}\n\n{scoreNous} - {scoreAdversaire} contre {txtAdversaire.Text}\n\nMoyenne équipe : {moyenneEquipe:F1}/100",
+                        $"{resultat}\n\n{scoreNous} - {scoreAdversaire} contre {nomAdversaire}\n\nMoyenne équipe : {moyenneEquipe:F1}/100",
                         "Résultat du match", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     AfficherJoueursDisponibles();
