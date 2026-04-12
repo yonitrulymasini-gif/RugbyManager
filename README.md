@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎮 Valorant Manager
 
 ## 📌 Description
